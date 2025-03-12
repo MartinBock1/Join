@@ -139,6 +139,11 @@ export class SignupComponent {
         this.showSignUpSuccess = false;
       }, 2000);
     }
+    this.name= '';
+    this.email = '';
+    this.password = '';
+    this.confirmPassword = '';
+    this.acceptedPolicy = false;
   }
 
   /**
