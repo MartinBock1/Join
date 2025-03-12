@@ -11,15 +11,29 @@ export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes),
     provideAnimationsAsync(),
+    // importProvidersFrom(
+    //   provideFirebaseApp(() =>
+    //     initializeApp({
+    //       projectId: 'joindb-994e9',
+    //       appId: '1:975674968055:web:bc9031cfcf1831cc1dd0f2',
+    //       storageBucket: 'joindb-4dd40.firebasestorage.app',
+    //       apiKey: 'AIzaSyAzcAlQ3T0BpGKq4bC30KjqrQ2jGMB1OEs',
+    //       authDomain: 'joindb-994e9.firebaseapp.com',
+    //       messagingSenderId: '975674968055',
+    //     })
+    //   )
+    // ),
+    // importProvidersFrom(provideAuth(() => getAuth())),
+    // importProvidersFrom(provideFirestore(() => getFirestore())),
     importProvidersFrom(
       provideFirebaseApp(() =>
         initializeApp({
-          projectId: 'joindb-4dd40',
-          appId: '1:550188192810:web:2df3a711daf5ca6bb95f53',
-          storageBucket: 'joindb-4dd40.firebasestorage.app',
-          apiKey: 'AIzaSyBj1vvXI8VUMvYCd_0PCtdVIZh70n4iYEA',
-          authDomain: 'joindb-4dd40.firebaseapp.com',
-          messagingSenderId: '550188192810',
+          projectId: 'joindb-994e9',
+          appId: '1:975674968055:web:bc9031cfcf1831cc1dd0f2',
+          storageBucket: 'joindb-994e9.firebasestorage.app',
+          apiKey: 'AIzaSyAzcAlQ3T0BpGKq4bC30KjqrQ2jGMB1OEs',
+          authDomain: 'joindb-994e9.firebaseapp.com',
+          messagingSenderId: '975674968055',
         })
       )
     ),

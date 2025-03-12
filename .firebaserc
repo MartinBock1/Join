@@ -1,14 +1,14 @@
 {
   "targets": {
-    "joindb-4dd40": {
+    "joindb-994e9": {
       "hosting": {
         "join": [
-          "joindb-4dd40"
+          "joindb-994e9"
         ]
       }
     }
   },
   "projects": {
-    "default": "joindb-4dd40"
+    "default": "joindb-994e9"
   }
 }
