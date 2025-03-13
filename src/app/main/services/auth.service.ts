@@ -9,18 +9,6 @@ import {
   updateProfile,
 } from 'firebase/auth';
 
-// const firebaseConfig = {
-//   projectId: 'joindb-994e9',
-//   appId: '1:975674968055:web:bc9031cfcf1831cc1dd0f2',
-//   storageBucket: 'joindb-994e9.firebasestorage.app',
-//   apiKey: 'AIzaSyAzcAlQ3T0BpGKq4bC30KjqrQ2jGMB1OEs',
-//   authDomain: 'joindb-994e9.firebaseapp.com',
-//   messagingSenderId: '975674968055',
-// };
-// // Initialize Firebase
-// const app = initializeApp(firebaseConfig);
-// const auth = getAuth(app);
-
 @Injectable({
   providedIn: 'root',
 })
