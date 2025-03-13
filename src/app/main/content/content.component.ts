@@ -33,6 +33,7 @@ import { AuthService } from '../services/auth.service';
 export class ContentComponent {
   navigationService = inject(NavigationService);
   authService = inject(AuthService);
+  
   /**
    * Selects an item by its index.
    *

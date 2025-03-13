@@ -45,35 +45,22 @@ export class AuthService {
       .then((userCredential) => {
         const user = userCredential.user;
 
-        // console.log('auth Service create works');
-        // console.log(email, pw, name);
-
         if (auth.currentUser) {
           updateProfile(auth.currentUser, {
             displayName: name,
           })
             .then(() => {
-              // console.log('auth Service signup change name');
-              // console.log(name);
               this.name = name;
             })
             .catch((error) => {
               const errorCode = error.code;
               const errorMessage = error.message;
-
-              // console.log('auth Service change name error');
-              // console.log(email, pw);
-              // console.log(errorCode, errorMessage);
             });
         }
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-
-        // console.log('auth Service create error');
-        // console.log(email, pw);
-        // console.log(errorCode, errorMessage);
       });
   }
 
@@ -88,20 +75,12 @@ export class AuthService {
       .then((userCredential) => {
         const user = userCredential.user;
         this.name = user.displayName ?? '';
-
-        // console.log('auth Service login works');
-        // console.log(email, pw);
-
         this.isUserLoggedIn = true;
         return true;
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-
-        // console.log('auth Service login error');
-        // console.log(email, pw);
-        // console.log(errorCode, errorMessage);
         return false;
       });
   }
@@ -112,7 +91,6 @@ export class AuthService {
   logout(): void {
     signOut(auth)
       .then(() => {
-        // console.log('User wurde ausgeloggt');
         this.isUserLoggedIn = false;
         this.name = '';
       })

@@ -91,15 +91,9 @@ export class BoardComponent {
         event.previousContainer
       );
       const newCategory = this.getCategoryFromContainer(event.container);
-
-      // console.info('----- selected Task Board TS -------');
-      // console.log(task);
-      // console.log('Wo soll es hin: ', newCategory);
-
       await this.taskService.addTask(newCategory, task);
 
       if (task.id) {
-        // console.log('Woher kam es: ', previousCategory);
         await this.taskService.deleteTask(previousCategory, task.id);
       }
     }
@@ -117,17 +111,7 @@ export class BoardComponent {
     if (container.data === this.taskService.feedbackList) return 'feedback';
     if (container.data === this.taskService.doneList) return 'done';
     return '';
-  }
-
-  /**
-   * Logs the current state of all task lists for debugging purposes.
-   */
-  // logTaskLists() {
-  //   console.log('Todo:', this.taskService.todoList);
-  //   console.log('In Progress:', this.taskService.progressList);
-  //   console.log('Feedback:', this.taskService.feedbackList);
-  //   console.log('Done:', this.taskService.doneList);
-  // }
+  } 
 
   /**
    * Filters the provided list of tasks based on the current search term.

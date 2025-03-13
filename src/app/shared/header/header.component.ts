@@ -11,11 +11,7 @@ import { ContactsService } from '../../main/services/contacts.service';
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
-/**
- * HeaderComponent manages navigation, authentication, and overlay state.
- * It provides methods to toggle and close the overlay, navigate between sections,
- * and update the selected navigation item.
- */
+
 export class HeaderComponent {
   /** Injected Services */
   contactService = inject(ContactsService);

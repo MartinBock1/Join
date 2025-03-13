@@ -21,7 +21,7 @@ section {
     border-color: $light_blue;
   }
 
-  > img {
+  >img {
     padding-left: 16px;
     margin-right: 16px;
     height: 32px;
@@ -69,7 +69,7 @@ input::placeholder {
   margin: 0px 12px 0 12px;
   padding: 4px;
 
-  > img {
+  >img {
     width: 20px;
     height: 20px;
     margin-top: 2px;
@@ -95,7 +95,7 @@ input::placeholder {
   padding: 8px 16px;
   white-space: nowrap;
 
-  > img {
+  >img {
     height: 18px;
     width: 18px;
     margin-left: 6px;
@@ -126,14 +126,9 @@ h2 {
   color: $blueish_gray;
 }
 
-// h3 {
-//     @include font($fs: 20px, $fw: 700);
-// }
-
 .board-header {
   @include dFlex($jc: space-between);
   flex-direction: row;
-  // height: 10%;
   width: 100%;
   padding: 128px 56px 56px 56px;
 }
@@ -146,8 +141,7 @@ h2 {
 .mobile-add-task-btn {
   display: none;
 
-  > img {
-    // background-color: $dark-blue;
+  >img {
     height: 25px;
     width: 24px;
   }
@@ -171,7 +165,7 @@ h2 {
   width: 100%;
   margin-bottom: 23px;
 
-  > button {
+  >button {
     height: 25px;
     width: 24px;
     background-image: url("./../../../../assets/img/icons/add_task_plus.svg");
@@ -195,11 +189,9 @@ h2 {
   width: 22%;
   position: relative;
   height: 50vh;
-  // border: 2px solid $light-gray;
 }
 
 .tasks-content {
-  // @include dFlex($ai: flex-start, $jc: flex-start, $g: 10px);
   min-height: 64px;
   width: 100%;
   background-color: $light_gray;
@@ -210,10 +202,10 @@ h2 {
   color: $gray;
   text-align: center;
   align-content: center;
-  margin-top: 34px; // change, before 24px%
+  margin-top: 34px;
   min-height: 48px;
   min-height: 48px;
-  width: 80%; // change, before 100%
+  width: 80%;
 
   background: $mid_gray;
   border-radius: 10px;
@@ -224,8 +216,8 @@ h2 {
   position: absolute;
   top: 24px;
 
-  left: 50%; // change, before 0
-  transform: translateX(-50%); // was new
+  left: 50%;
+  transform: translateX(-50%);
 
   z-index: -1;
 }
@@ -235,7 +227,6 @@ h3 {
 }
 
 /* drag & drop cards */
-
 .example-container {
   width: 400px;
   max-width: 100%;
@@ -247,14 +238,10 @@ h3 {
 .example-list {
   @include dFlex($ai: flex-start, $jc: flex-start, $g: 10px);
   flex-direction: column;
-  // border: solid 1px #ccc;
   min-height: 250px;
   width: 100%;
   border-radius: 4px;
   overflow: auto;
-  // height: 50vh;
-
-  //### NEW 02032025
   padding: 10px;
 }
 
@@ -306,6 +293,7 @@ app-single-task {
   section {
     height: auto;
   }
+
   section {
     height: auto;
   }
@@ -313,7 +301,7 @@ app-single-task {
   .board-header-left {
     @include dFlex($ai: center, $jc: space-between);
 
-    > h1 {
+    >h1 {
       font-size: 47px;
     }
   }
@@ -449,7 +437,6 @@ app-single-task {
     @include dFlex($ai: center, $jc: center);
     background-color: $dark_blue;
     border-radius: 10px;
-    // display: block;
     height: 40px;
     width: 40px;
     cursor: pointer;

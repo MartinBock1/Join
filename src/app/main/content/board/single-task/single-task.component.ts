@@ -23,22 +23,22 @@ import { AddTaskComponent } from '../../add-task/add-task.component';
 export class SingleTaskComponent {
   @Input() task!: Task;
 
-   /** Task State */
-   tasks: Task[] = [];
-   selectedTask: Task | null = null;
-   selectedContacts: any[] = [];
- 
-   /** UI State */
-   isOverlayOpen: boolean = false;
-   isClosing: boolean = false;
- 
-   /** Injected Services */
-   constructor(
-     public taskService: TaskServiceService,
-     public contactService: ContactsService
-   ) {
-     this.tasks = this.taskService.todoList;
-   }
+  /** Task State */
+  tasks: Task[] = [];
+  selectedTask: Task | null = null;
+  selectedContacts: any[] = [];
+
+  /** UI State */
+  isOverlayOpen: boolean = false;
+  isClosing: boolean = false;
+
+  /** Injected Services */
+  constructor(
+    public taskService: TaskServiceService,
+    public contactService: ContactsService
+  ) {
+    this.tasks = this.taskService.todoList;
+  }
 
   /**
    * Opens the overlay for a specific task.
@@ -75,11 +75,8 @@ export class SingleTaskComponent {
     this.taskService.isEditModeActivated = true;
     if (task && task.id) {
       this.taskService.selectedTaskId = task.id;
-      this.taskService.selectedTaskCategory = task?.category;
-
-      // console.log(task);
+      this.taskService.selectedTaskCategory = task?.category;      
       this.taskService.selectedTask = task;
-      // console.log(this.taskService.selectedTask);
     }
   }
 
@@ -156,9 +153,6 @@ export class SingleTaskComponent {
    */
   updateSubtaskCompleted(): void {
     if (this.selectedTask && this.taskService.hasBeenUpdated) {
-      // console.log(this.selectedTask);
-      // console.log(this.taskService.whatIsTheType);
-      // console.log(this.selectedTask.subtasks);
       if (this.selectedTask.id && this.selectedTask.description) {
         this.taskService.updateTask(
           this.selectedTask.id,
@@ -269,14 +263,4 @@ export class SingleTaskComponent {
       (c) => c.email === contact.email
     );
   }
-
-  /**
-   * Debugging function that logs task information to the console.
-   * @param {Task | null} arg0 - The task to be logged, or null if no task is provided.
-   */
-  // getTest(arg0: Task | null) {
-  //   console.log(arg0);
-  //   console.log('--------------');
-  //   console.log(this.taskService.whatIsTheType);
-  // }
 }

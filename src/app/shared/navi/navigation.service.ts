@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class NavigationService {
-  selectedItem = 0; // Signal für den aktiven Menüpunkt
+  selectedItem = 0; 
   predecessor = 0;
   isSignUpVisible = true;
   isLoginVisible = false;
@@ -36,6 +36,5 @@ export class NavigationService {
    */
   onAnimationEnd(): void {
     this.isAnimationSummarydone = true;
-    // console.log('Animation abgeschlossen!');
   }
 }

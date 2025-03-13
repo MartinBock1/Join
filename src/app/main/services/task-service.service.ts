@@ -33,7 +33,7 @@ export class TaskServiceService {
   doneList: Task[] = [];
 
   // UI Controls
-  showCloseButton: boolean = false; // Controls button visibility
+  showCloseButton: boolean = false; 
   isClosing: boolean = false;
 
   unsubToDo;
@@ -66,7 +66,6 @@ export class TaskServiceService {
       this.isClosing = true;
 
       setTimeout(() => {
-        // this.showCloseButton = !this.showCloseButton;
         this.showCloseButton = false;
         this.isClosing = false;
       }, 300);

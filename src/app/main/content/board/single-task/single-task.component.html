@@ -1,6 +1,5 @@
 <section>
   <!-- overview overlay -->
-
   @if (isOverlayOpen) {
   <div class="task-overlay-bg"></div>
 
@@ -108,7 +107,6 @@
             alt="Uncompleted Icon"
           />
           }
-          <!-- <span [ngClass]="{ 'subtask-completed': subtask.IsCompleted }"> -->
           <span>
             {{ subtask.text }}
           </span>
@@ -136,7 +134,6 @@
   }
 
   <!-- Small card board -->
-
   <div class="example-box" (click)="openOverlay(task)" cdkDrag>
     <p
       class="task-card-category"
@@ -172,7 +169,7 @@
 
     <div class="task-card-team">
       <div class="team-left">
-        <!-- Zeigt maximal 4 Teilnehmer mit ihren Initialen -->
+        <!-- Shows a maximum of 4 participants with their initials -->
         @for (id of getVisibleContacts(task); track $index) { @for (contact of
         contactService.contactList; track $index) { @if(id == contact.id) {
         <div
@@ -183,7 +180,7 @@
         </div>
         } } }
 
-        <!-- Falls mehr als 4 Teilnehmer vorhanden sind, zeige +x -->
+        <!-- If there are more than 4 participants, show +x -->
         @if (getHiddenCount(task) > 0) {
         <div class="profile-badge more">+{{ getHiddenCount(task) }}</div>
         }

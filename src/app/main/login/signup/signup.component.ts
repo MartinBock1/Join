@@ -54,11 +54,10 @@ export class SignupComponent {
   eMailPattern = /[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}/;
   pwPattern = /(?=.*[A-Z])(?=.*\d)(?=.*[^\w]).{6,20}/;
 
-
   focusInput(inputElement: HTMLInputElement) {
     inputElement.focus();
   }
-  
+
   /**
    * Selects an item by its index.
    * @param {number} index - The index of the item to be selected.
@@ -78,8 +77,8 @@ export class SignupComponent {
     this.nameFieldActive = inputName === 'name';
     this.passwordFieldActive = inputName === 'password';
     this.confirmPasswordFieldActive = inputName === 'confirm-password';
-    this.signUpAttempted = true; // Trigger validation on focus
-    this.validateField(inputName); // Validate immediately on focus
+    this.signUpAttempted = true;
+    this.validateField(inputName);
   }
 
   /**
@@ -103,7 +102,9 @@ export class SignupComponent {
     } else if (field === 'password') {
       this.isPasswordValid = this.pwPattern.test(this.password);
     } else if (field === 'confirm-password') {
-      this.isPasswordEqual = this.password === this.confirmPassword && this.pwPattern.test(this.password);
+      this.isPasswordEqual =
+        this.password === this.confirmPassword &&
+        this.pwPattern.test(this.password);
     }
   }
 
@@ -139,7 +140,15 @@ export class SignupComponent {
         this.showSignUpSuccess = false;
       }, 2000);
     }
-    this.name= '';
+    this.clearSignUp();
+  }
+
+  /**
+   * Clears all sign-up form fields, resetting them to their default values.
+   * This ensures that any previously entered user data is removed.
+   */
+  clearSignUp() {
+    this.name = '';
     this.email = '';
     this.password = '';
     this.confirmPassword = '';

@@ -87,7 +87,6 @@ export class AddTaskComponent {
       this.subtasks = this.convertSubtasks(
         this.taskService.selectedTask?.subtasks
       );
-      // this.selectedContacts = this.taskService.selectedTask?.assignedTo ?? [];
       this.selectedContacts = this.mapAssignedToContacts(
         this.taskService.selectedTask?.assignedTo
       );
@@ -477,12 +476,10 @@ export class AddTaskComponent {
 
     // Validate the date and fields
     if (!this.isValidDate(this.newDate)) {
-      // console.log('The selected date cannot be in the past');
       return;
     }
 
     if (!this.areRequiredFieldsFilled()) {
-      // console.log('You cannot even fill in all the required fields?!?');
       return;
     }
 
@@ -599,7 +596,7 @@ export class AddTaskComponent {
     this.inputTitle = '';
     this.inputDescription = '';
     this.newDate = '';
-    this.prio = 'Medium'; // Set default priority
+    this.prio = 'Medium'; 
     this.selectedCategory = '';
     this.selectedContacts = [];
     this.subtasks = [];
@@ -617,12 +614,10 @@ export class AddTaskComponent {
 
     // Validate the date and fields
     if (!this.isValidDate(this.newDate)) {
-      // console.log('The selected date cannot be in the past');
       return;
     }
 
     if (!this.areRequiredFieldsFilled()) {
-      // console.log('You cannot even fill in all the required fields?!?');
       return;
     }
 

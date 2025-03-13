@@ -90,7 +90,17 @@ export class OverlayComponent {
     if (this.contactForm) {
       this.contactForm.resetForm();
     }
+    this.clearOverlay();
+  }
 
+  /**
+   * Clears the values of name, email, and phone properties.
+   * This method is typically used to reset the form fields or clear the user data
+   * in an overlay or modal window.
+   *
+   * @returns {void} This function does not return any value.
+   */
+  clearOverlay() {
     this.name = '';
     this.email = '';
     this.phone = '';
@@ -168,6 +178,17 @@ export class OverlayComponent {
       this.contactForm.resetForm();
     }
 
+    this.clearAddContactList();
+  }
+
+  /**
+   * Clears the contact form values and resets the validity flags.
+   * This method is used to reset the fields (name, email, phone) and their respective
+   * validity status (isValidName, isValidEmail, isValidPhone) in a contact form or overlay.
+   *
+   * @returns {void} This function does not return any value.
+   */
+  clearAddContactList() {
     this.name = '';
     this.email = '';
     this.phone = '';

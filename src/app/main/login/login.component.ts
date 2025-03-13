@@ -186,8 +186,6 @@ export class LoginComponent implements OnInit {
       this.pwPattern.test(this.password)
     ) {
       this.loginUser(this.email, this.password);
-    } else {
-      // console.log('Eingaben sind nicht gültig!');
     }
   }
 
@@ -204,13 +202,19 @@ export class LoginComponent implements OnInit {
   loginUser(email: string, pw: string) {
     this.authService.login(email, pw).then((isLoggedIn) => {
       if (isLoggedIn) {
-        this.linkContent(); // Nur bei erfolgreicher Anmeldung ausführen
-        this.email = '';
-        this.password = '';
-        this.loginAttempted = false;
-      } else {
-        // console.log('Login fehlgeschlagen! Überprüfe die Eingaben.');
+        this.linkContent();
+        this.clearLogin();
       }
     });
+  }
+
+  /**
+   * Clears all login form fields, resetting them to their default values.
+   * This ensures that any previously entered login data is removed.
+   */
+  clearLogin() {
+    this.email = '';
+    this.password = '';
+    this.loginAttempted = false;
   }
 }

@@ -1,13 +1,11 @@
 @import "./../../../styles.scss";
 
 /* Tags and Classes */
-
 section {
   @include dFlex($jc: space-between);
 
   width: 100%;
   background-color: $white;
-  // position: relative;
   min-height: 91px;
   box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.1);
 }
@@ -19,7 +17,6 @@ section {
 }
 
 .header-left {
-  // position: relative;
   background-color: $white;
   padding: 32px 64px;
 
@@ -42,7 +39,6 @@ img {
   @include dFlex($jc: center);
   background-color: $white;
   position: relative;
-  // overflow-x: hidden;
 
   > .help-link {
     height: 32px;
@@ -63,7 +59,6 @@ img {
 
 .initials-btn {
   @include dFlex($ai: center);
-
   height: 64px;
   width: 64px;
   border-radius: 50%;
@@ -88,7 +83,6 @@ img {
 }
 
 /* Burger-Overlay */
-
 .toggleOff-container {
   height: 100%;
   width: 100%;
@@ -143,12 +137,7 @@ img {
   width: 100%;
 }
 
-// .slideIn {
-//     animation: slide-in 125ms ease-in forwards,
-// }
-
 /* Animations */
-
 .show {
   animation: slide-right 125ms ease-in;
 }
@@ -178,30 +167,7 @@ img {
   }
 }
 
-//  @keyframes slide-in {
-//      0% {
-//        transform: translate(-50%, -50%) translateX(150%);
-//        opacity: 0;
-//      }
-//      100% {
-//        transform: translate(-50%, -50%) translateX(0%);
-//        opacity: 1;
-//      }
-//    }
-
-//    @keyframes slide-out {
-//      0% {
-//        transform: translate(-50%, -50%) translateX(0%);
-//      opacity: 1;
-//      }
-//     100% {
-//       transform: translate(-50%, -50%) translateX(150%);
-//       opacity: 0;
-//     }
-// }
-
 /* Media query's */
-
 @media (max-width: 720px) {
   .help-link {
     display: none;

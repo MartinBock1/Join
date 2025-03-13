@@ -1,7 +1,6 @@
 @import "./../../../../styles.scss";
 
 section {
-  // box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.1) inset;
   padding: 0 70px;
   max-height: calc(100vh - 91px);
   min-height: auto;
@@ -29,10 +28,10 @@ form {
   }
 
   .close-button {
-    display: none; // Standardmäßig ausgeblendet
+    display: none;
 
     &.show {
-      display: block; // Zeigt den Button an, wenn die Klasse "show" hinzugefügt wird
+      display: block;
       z-index: 10;
       cursor: pointer;
       border-radius: 50%;
@@ -44,11 +43,6 @@ form {
   }
 }
 
-// .error-message {
-//   @include font($fs: 10px, $fw: 400);
-//   color: $red;
-// }
-
 /*linkes Div*/
 .content {
   @include dFlex($ai: flex-start, $g: 20px);
@@ -59,7 +53,6 @@ form {
   .title_field {
     @include dFlex($ai: flex-start, $g: 10px);
     flex-direction: column;
-    // width: 440px;
     width: 100%;
 
     .title {
@@ -104,7 +97,6 @@ form {
   .description_field {
     @include dFlex($ai: flex-start, $g: 10px);
     flex-direction: column;
-    // width: 440px;
     width: 100%;
 
     .description {
@@ -326,8 +318,6 @@ form {
   span {
     color: $red;
     margin-top: -20px;
-    // position: relative;
-    // top: -20px;
   }
 
   > div {
@@ -797,8 +787,6 @@ ul {
   }
 
   .btn-submit-section {
-    // @include dFlex($jc: space-between, $g: 30px);
-    // margin-top: 4px;
     position: fixed;
     bottom: 100px;
     right: 50px;
@@ -938,7 +926,6 @@ ul {
 }
 
 // Add task to board
-
 .task-toast {
   @include dFlex($g: 16px);
   position: fixed;
