@@ -1,4 +1,5 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
+import { Auth } from '@angular/fire/auth';
 import { initializeApp } from 'firebase/app';
 import {
   getAuth,
@@ -8,17 +9,17 @@ import {
   updateProfile,
 } from 'firebase/auth';
 
-const firebaseConfig = {
-  projectId: 'joindb-994e9',
-  appId: '1:975674968055:web:bc9031cfcf1831cc1dd0f2',
-  storageBucket: 'joindb-994e9.firebasestorage.app',
-  apiKey: 'AIzaSyAzcAlQ3T0BpGKq4bC30KjqrQ2jGMB1OEs',
-  authDomain: 'joindb-994e9.firebaseapp.com',
-  messagingSenderId: '975674968055',
-};
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
+// const firebaseConfig = {
+//   projectId: 'joindb-994e9',
+//   appId: '1:975674968055:web:bc9031cfcf1831cc1dd0f2',
+//   storageBucket: 'joindb-994e9.firebasestorage.app',
+//   apiKey: 'AIzaSyAzcAlQ3T0BpGKq4bC30KjqrQ2jGMB1OEs',
+//   authDomain: 'joindb-994e9.firebaseapp.com',
+//   messagingSenderId: '975674968055',
+// };
+// // Initialize Firebase
+// const app = initializeApp(firebaseConfig);
+// const auth = getAuth(app);
 
 @Injectable({
   providedIn: 'root',
@@ -32,6 +33,8 @@ export class AuthService {
   //  Authentication State
   isUserLoggedIn = false;
 
+  auth = inject(Auth);
+
   constructor() {}
 
   /**
@@ -41,12 +44,12 @@ export class AuthService {
    * @param {string} name - The display name of the new user.
    */
   signUp(email: string, pw: string, name: string): void {
-    createUserWithEmailAndPassword(auth, email, pw)
+    createUserWithEmailAndPassword(this.auth, email, pw)
       .then((userCredential) => {
         const user = userCredential.user;
 
-        if (auth.currentUser) {
-          updateProfile(auth.currentUser, {
+        if (this.auth.currentUser) {
+          updateProfile(this.auth.currentUser, {
             displayName: name,
           })
             .then(() => {
@@ -71,7 +74,7 @@ export class AuthService {
    * @returns {Promise<boolean>} A promise resolving to `true` if login succeeds, otherwise `false`.
    */
   login(email: string, pw: string): Promise<boolean> {
-    return signInWithEmailAndPassword(auth, email, pw)
+    return signInWithEmailAndPassword(this.auth, email, pw)
       .then((userCredential) => {
         const user = userCredential.user;
         this.name = user.displayName ?? '';
@@ -89,7 +92,7 @@ export class AuthService {
    * Logs out the currently authenticated user.
    */
   logout(): void {
-    signOut(auth)
+    signOut(this.auth)
       .then(() => {
         this.isUserLoggedIn = false;
         this.name = '';
